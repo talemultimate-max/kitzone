@@ -462,7 +462,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Crop Top Donna FC Barcelona Home',
     category: 'Donna',
-    price: 30,
+    price: 35,
     originalPrice: 80,
     badge: 'IN OFFERTA',
     tagColor: 'bg-pink-900/40 text-pink-100 border-pink-600',
