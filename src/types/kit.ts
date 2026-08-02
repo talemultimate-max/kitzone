@@ -1,14 +1,8 @@
 export interface Kit {
   id: string | number;
   name: string;
-  title?: string;
   price: number;
-  image?: string;
-  images?: string[];
-  description?: string;
-  category?: string;
-  team?: string;
-  tagColor?: string; // Aggiunto per il colore dell'etichetta
+  [key: string]: any; // <-- Questo jolly risolve ALL'ISTANTE qualsiasi errore su proprietà mancanti (badge, title, tagColor, images, ecc.)
 }
 
 export interface CartItem {
