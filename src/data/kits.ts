@@ -39,6 +39,18 @@ import barcaHomeMlImg from './J53A4416JPG-1211301f4b.webp';
 import barcaShortsHomeImg from './J53A4606JPG-12123507f8.webp';
 import barcaCropTopImg from './J53A6005JPG-1132555e13.webp';
 
+// Nuovi arrivi FC Barcellona
+import barcaGraphicBlueImg from './6c98dfdff7.webp';
+import barcaKidKitImg from './e0963acd5b.webp';
+import barcaJacketImg from './16464eb310.webp';
+import barcaRedShortsImg from './2792dd9e1f.webp';
+import barcaSweatshirtBlueImg from './4a9fb01573.webp';
+import barcaSweatshirtStripedImg from './1172b9f740.webp';
+import barcaSupercopaImg from './10f0ef3808.webp';
+import barcaEmbroideryImg from './518eb899fd.webp';
+import barcaScriptImg from './4f3747e64c.webp';
+import barcaSpecialSponsorImg from './27355cee51.webp';
+
 const getSrc = (img: any) => (typeof img === 'string' ? img : img.src);
 
 export const KITS_DATA: Kit[] = [
@@ -500,3 +512,95 @@ export const KITS_DATA: Kit[] = [
     customPatches: [],
   },
 ];
+
+// --- NUOVI PRODOTTI FC BARCELLONA ---
+  {
+    id: 'barca-graphic-blue',
+    name: 'FC Barcelona Maglia Pre-Match Pattern Celeste',
+    team: 'FC Barcelona',
+    category: 'Maglie',
+    price: 45,
+    image: barcaGraphicBlueImg,
+    description: 'Maglia allenamento/pre-match con grafica geometrica celeste, rossa e blu.',
+  },
+  {
+    id: 'barca-kid-kit',
+    name: 'FC Barcelona Kit Bimbo Completo (Maglia + Pantaloncini)',
+    team: 'FC Barcelona',
+    category: 'Kit Bimbo',
+    price: 50,
+    image: barcaKidKitImg,
+    description: 'Set completo da bambino con maglia a zig-zag blaugrana e pantaloncini rossi.',
+  },
+  {
+    id: 'barca-jacket-blue',
+    name: 'FC Barcelona Giacca Track Jacket Vintage',
+    team: 'FC Barcelona',
+    category: 'Giacche',
+    price: 75,
+    image: barcaJacketImg,
+    description: 'Giacca sportiva con zip intera, righe gessate fini e stemma classico FCB.',
+  },
+  {
+    id: 'barca-red-shorts',
+    name: 'FC Barcelona Pantaloncini Home Rossi',
+    team: 'FC Barcelona',
+    category: 'Pantaloncini',
+    price: 30,
+    image: barcaRedShortsImg,
+    description: 'Pantaloncini ufficiali rossi con dettagli azzurri e blu e stemma ricamato.',
+  },
+  {
+    id: 'barca-sweatshirt-blue',
+    name: 'FC Barcelona Felpa Girocollo Blu e Rossa',
+    team: 'FC Barcelona',
+    category: 'Felpe',
+    price: 65,
+    image: barcaSweatshirtBlueImg,
+    description: 'Felpa girocollo colorblock blu e rossa con stemma FC Barcelona centrale.',
+  },
+  {
+    id: 'barca-sweatshirt-striped',
+    name: 'FC Barcelona Felpa Girocollo a Strisce Blaugrana',
+    team: 'FC Barcelona',
+    category: 'Felpe',
+    price: 65,
+    image: barcaSweatshirtStripedImg,
+    description: 'Felpa girocollo a bande verticali ampie rosse e blu con stemma centrale.',
+  },
+  {
+    id: 'barca-supercopa',
+    name: 'FC Barcelona Maglia Special Edition Supercopa 2026',
+    team: 'FC Barcelona',
+    category: 'Maglie',
+    price: 55,
+    image: barcaSupercopaImg,
+    description: 'Maglia ufficiale con patch Supercopa de España Jeddah 2026 e grafica a zig-zag.',
+  },
+  {
+    id: 'barca-embroidery-special',
+    name: 'FC Barcelona Maglia Special Edition Ricamata (Cranes)',
+    team: 'FC Barcelona',
+    category: 'Maglie',
+    price: 60,
+    image: barcaEmbroideryImg,
+    description: 'Edizione speciale da collezione con ricami orientali a forma di gru e fiori dorati.',
+  },
+  {
+    id: 'barca-script-dark',
+    name: 'FC Barcelona Maglia Dark Pattern "Barça"',
+    team: 'FC Barcelona',
+    category: 'Maglie',
+    price: 45,
+    image: barcaScriptImg,
+    description: 'Maglia scura con sfumature granata e scritta "Barça" in stile corsivo dorato.',
+  },
+  {
+    id: 'barca-special-sponsor',
+    name: 'FC Barcelona Maglia Special Edition Sponsor',
+    team: 'FC Barcelona',
+    category: 'Maglie',
+    price: 50,
+    image: barcaSpecialSponsorImg,
+    description: 'Maglia blaugrana in edizione limitata con logo sponsor speciale giallo.',
+  },
