@@ -28,6 +28,17 @@ import realTutaGiallaImg from './14e5aab74e.webp';
 import realGiaccaBiancaImg from './ae03aef965.webp';
 import realKitBimboImg from './fd5378ff6f (1).webp';
 
+// --- FC BARCELLONA ---
+import barcaPixelImg from './ab3a4c78e8.jpg';
+import barcaHomeMcImg from './J53A3763JPG.jpg';
+import barcaKitBimboImg from './J53A4630JPG.webp';
+import barcaBlackPurpleImg from './J53A2840JPG-170542a4f1.jpg';
+import barcaTurquoiseMcImg from './J53A2842JPG-1707355992.jpg';
+import barcaTurquoiseMlImg from './J53A2844JPG-17100072d9.jpg';
+import barcaHomeMlImg from './J53A4416JPG-1211301f4b.jpg';
+import barcaShortsHomeImg from './J53A4606JPG-12123507f8.jpg';
+import barcaCropTopImg from './J53A6005JPG-1132555e13.webp';
+
 const getSrc = (img: any) => (typeof img === 'string' ? img : img.src);
 
 export const KITS_DATA: Kit[] = [
@@ -356,6 +367,136 @@ export const KITS_DATA: Kit[] = [
     bgGradient: 'from-slate-800/40 to-slate-900',
     availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
     images: [getSrc(realSmanicatoBiancoImg)],
+    customPatches: [],
+  },
+
+  // ==========================================
+  // FC BARCELLONA
+  // ==========================================
+  {
+    id: 'barcelona-home-mc',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Home Kit (Manica Corta)',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 110,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-blue-900/40 text-blue-100 border-blue-600',
+    bgGradient: 'from-blue-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaHomeMcImg)],
+    customPatches: ['Patch Champions League', 'Patch La Liga'],
+  },
+  {
+    id: 'barcelona-home-ml',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Home Kit (Manica Lunga)',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 110,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-blue-900/40 text-blue-100 border-blue-600',
+    bgGradient: 'from-blue-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaHomeMlImg)],
+    customPatches: ['Patch Champions League', 'Patch La Liga'],
+  },
+  {
+    id: 'barcelona-turquoise-mc',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Away Kit Celeste (Manica Corta)',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 110,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-cyan-900/40 text-cyan-100 border-cyan-600',
+    bgGradient: 'from-cyan-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaTurquoiseMcImg)],
+    customPatches: ['Patch Champions League', 'Patch La Liga'],
+  },
+  {
+    id: 'barcelona-turquoise-ml',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Away Kit Celeste (Manica Lunga)',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 110,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-cyan-900/40 text-cyan-100 border-cyan-600',
+    bgGradient: 'from-cyan-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaTurquoiseMlImg)],
+    customPatches: ['Patch Champions League', 'Patch La Liga'],
+  },
+  {
+    id: 'barcelona-black-purple',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Kit Speciale - Nero / Viola',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 110,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-purple-900/40 text-purple-100 border-purple-600',
+    bgGradient: 'from-purple-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaBlackPurpleImg)],
+    customPatches: ['Patch Champions League', 'Patch La Liga'],
+  },
+  {
+    id: 'barcelona-pixel-prematch',
+    team: 'FC Barcelona',
+    title: 'FC Barcelona Kit Pre-Match Pixel',
+    category: 'La Liga',
+    price: 35,
+    originalPrice: 100,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-blue-900/40 text-blue-100 border-blue-600',
+    bgGradient: 'from-blue-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaPixelImg)],
+    customPatches: [],
+  },
+  {
+    id: 'barcelona-crop-top-donna',
+    team: 'FC Barcelona',
+    title: 'Crop Top Donna FC Barcelona Home',
+    category: 'Donna',
+    price: 30,
+    originalPrice: 80,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-pink-900/40 text-pink-100 border-pink-600',
+    bgGradient: 'from-pink-950/40 to-slate-900',
+    availableSizes: ['XS', 'S', 'M', 'L'],
+    images: [getSrc(barcaCropTopImg)],
+    customPatches: [],
+  },
+  {
+    id: 'barcelona-shorts-home',
+    team: 'FC Barcelona',
+    title: 'Pantaloncini FC Barcelona Home',
+    category: 'Pantaloncini',
+    price: 20,
+    originalPrice: 45,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-slate-700/40 text-slate-100 border-slate-600',
+    bgGradient: 'from-slate-800/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(barcaShortsHomeImg)],
+    customPatches: [],
+  },
+  {
+    id: 'barcelona-kit-bimbo-home',
+    team: 'FC Barcelona',
+    title: 'Completo Bimbo FC Barcelona Home',
+    category: 'Kit Bambino',
+    price: 45,
+    originalPrice: 75,
+    badge: 'IN OFFERTA',
+    tagColor: 'bg-red-900/40 text-red-100 border-red-600',
+    bgGradient: 'from-blue-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL'],
+    images: [getSrc(barcaKitBimboImg)],
     customPatches: [],
   },
 ];
