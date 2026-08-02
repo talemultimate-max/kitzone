@@ -9,6 +9,7 @@ export interface Kit {
 }
 
 export interface CartItem {
+  cartItemId: string;
   kit: Kit;
   quantity: number;
 }
