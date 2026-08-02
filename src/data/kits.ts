@@ -43,7 +43,7 @@ export const KITS_DATA: Kit[] = [
     team: 'AC Milan',
     title: 'AC Milan Home Kit 2026/27 (Fan Version)',
     category: 'Serie A',
-    price: 45,
+    price: 35,
     originalPrice: 99,
     badge: 'IN OFFERTA',
     tagColor: 'bg-red-900/40 text-red-100 border-red-600',
