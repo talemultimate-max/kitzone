@@ -29,14 +29,14 @@ import realGiaccaBiancaImg from './ae03aef965.webp';
 import realKitBimboImg from './fd5378ff6f (1).webp';
 
 // --- FC BARCELLONA ---
-import barcaPixelImg from './ab3a4c78e8.jpg';
-import barcaHomeMcImg from './J53A3763JPG.jpg';
+import barcaPixelImg from './ab3a4c78e8.webp';
+import barcaHomeMcImg from './J53A3763JPG.webp';
 import barcaKitBimboImg from './J53A4630JPG.webp';
-import barcaBlackPurpleImg from './J53A2840JPG-170542a4f1.jpg';
-import barcaTurquoiseMcImg from './J53A2842JPG-1707355992.jpg';
-import barcaTurquoiseMlImg from './J53A2844JPG-17100072d9.jpg';
-import barcaHomeMlImg from './J53A4416JPG-1211301f4b.jpg';
-import barcaShortsHomeImg from './J53A4606JPG-12123507f8.jpg';
+import barcaBlackPurpleImg from './J53A2840JPG-170542a4f1.webp';
+import barcaTurquoiseMcImg from './J53A2842JPG-1707355992.webp';
+import barcaTurquoiseMlImg from './J53A2844JPG-17100072d9.webp';
+import barcaHomeMlImg from './J53A4416JPG-1211301f4b.webp';
+import barcaShortsHomeImg from './J53A4606JPG-12123507f8.webp';
 import barcaCropTopImg from './J53A6005JPG-1132555e13.webp';
 
 const getSrc = (img: any) => (typeof img === 'string' ? img : img.src);
