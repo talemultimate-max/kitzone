@@ -1,14 +1,14 @@
 export interface Kit {
-  id: string;
-  team: string;
-  title: string;
-  category: string;
+  id: string | number;
+  name: string;
   price: number;
-  originalPrice?: number; // <-- Aggiunto qui
-  badge?: string;
-  tagColor?: string;
-  bgGradient?: string;
-  availableSizes: string[];
-  images: string[];
-  customPatches?: string[];
+  image?: string;
+  description?: string;
+  category?: string;
+  team?: string;
+}
+
+export interface CartItem {
+  kit: Kit;
+  quantity: number;
 }
