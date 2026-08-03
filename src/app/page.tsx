@@ -4,22 +4,31 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import KitModal from '@/components/KitModal';
 import CartDrawer from '@/components/CartDrawer';
+import { NavigationDrawer } from '@/components/NavigationDrawer';
 import { KITS_DATA } from '@/data/kits';
 import { Kit, CartItem } from '@/types/kit';
-import { MessageCircle, ArrowRight, Zap, Sparkles, Trophy, ShoppingBag } from 'lucide-react';
+import { MessageCircle, ArrowRight, Zap, Sparkles, Trophy, ShoppingBag, Menu } from 'lucide-react';
 
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tutte');
+  const [selectedTeam, setSelectedTeam] = useState<string | null>(null); // Stato per il filtro squadra
   const [activeKitForModal, setActiveKitForModal] = useState<Kit | null>(null);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false); // Stato per aprire/chiudere il menu laterale
 
-  const whatsappNumber = '393714589297';
   const defaultMessage = encodeURIComponent('Ciao KITZONE1! Vorrei informazioni sul catalogo maglie.');
 
-  const filteredKits = selectedCategory === 'Tutte'
-    ? KITS_DATA
-    : KITS_DATA.filter((kit) => kit.category === selectedCategory);
+  // Logica di filtraggio unificata (per categoria o per squadra scelta dal menu)
+  const filteredKits = KITS_DATA.filter((kit) => {
+    // Se è stata selezionata una squadra specifica dal drawer
+    if (selectedTeam) {
+      return kit.team.toLowerCase() === selectedTeam.toLowerCase();
+    }
+    // Altrimenti filtra per categoria standard
+    if (selectedCategory === 'Tutte') return true;
+    return kit.category === selectedCategory;
+  });
 
   const handleAddToCart = (newItem: CartItem) => {
     setCartItems((prev) => [...prev, newItem]);
@@ -36,6 +45,17 @@ export default function Home() {
         itemCount={cartItems.length}
         onOpenCart={() => setIsCartOpen(true)}
       />
+
+      {/* BARRA EXTRA PER APRIRE IL MENU A TENDINA (O puoi metterla dentro Header.tsx) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <button
+          onClick={() => setIsDrawerOpen(true)}
+          className="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+        >
+          <Menu className="w-4 h-4" />
+          <span>Menu Campionati & Squadre ☰</span>
+        </button>
+      </div>
 
       <main className="min-h-screen bg-grid-pattern relative pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
@@ -70,7 +90,7 @@ export default function Home() {
                   </a>
 
                   <a
-                    href={`https://wa.me/${393714589297}?text=${defaultMessage}`}
+                    href={`https://wa.me/393714589297?text=${defaultMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-200 font-extrabold rounded-2xl text-xs uppercase tracking-wider border border-slate-800 flex items-center justify-center gap-2 transition-all"
@@ -113,17 +133,28 @@ export default function Home() {
                   <span>Catalogo Ufficiale</span>
                 </div>
                 <h2 className="text-3xl font-black text-white italic uppercase tracking-tight">
-                  MAGLIE DISPONIBILI
+                  {selectedTeam ? `Squadra: ${selectedTeam}` : 'MAGLIE DISPONIBILI'}
                 </h2>
+                {selectedTeam && (
+                  <button 
+                    onClick={() => setSelectedTeam(null)}
+                    className="text-xs text-emerald-400 underline mt-1 block hover:text-emerald-300"
+                  >
+                    Annulla filtro squadra (Mostra tutti)
+                  </button>
+                )}
               </div>
 
               <div className="flex flex-wrap gap-2 text-xs font-bold">
                 {['Tutte', 'Serie A', 'Premier League', 'La Liga', 'Retro Vintage', 'National & Special'].map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => setSelectedCategory(cat)}
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      setSelectedTeam(null); // Resetta il filtro squadra se si clicca sulle categorie rapide
+                    }}
                     className={`px-4 py-2 rounded-xl uppercase tracking-wider transition-all border ${
-                      selectedCategory === cat
+                      selectedCategory === cat && !selectedTeam
                         ? 'bg-emerald-500 text-slate-950 font-black border-emerald-400 shadow-md shadow-emerald-500/20'
                         : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
                     }`}
@@ -135,64 +166,76 @@ export default function Home() {
             </div>
 
             {/* GRIGLIA PRODOTTI */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredKits.map((kit) => (
-                <div
-                  key={kit.id}
-                  className="group bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between shadow-xl"
+            {filteredKits.length === 0 ? (
+              <div className="text-center py-16 bg-slate-950 border border-slate-800 rounded-3xl">
+                <p className="text-slate-400 text-sm font-bold">Nessun kit trovato per questa selezione.</p>
+                <button 
+                  onClick={() => { setSelectedTeam(null); setSelectedCategory('Tutte'); }}
+                  className="mt-3 px-4 py-2 bg-emerald-500 text-slate-950 rounded-xl text-xs font-black uppercase"
                 >
-                  <div className="h-64 relative bg-slate-900 overflow-hidden">
-                    {kit.images && kit.images.length > 0 ? (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img
-                        src={kit.images[0]}
-                        alt={kit.title}
-                        referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-slate-700">
-                        <Trophy className="w-12 h-12" />
-                      </div>
-                    )}
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/50 p-4 flex flex-col justify-between pointer-events-none">
-                      <div className="flex items-center justify-between">
-                        <span className={`text-[10px] font-black px-2.5 py-1 rounded-lg border uppercase tracking-wider ${kit.tagColor}`}>
-                          {kit.badge}
-                        </span>
-                        <span className="text-xs font-black text-slate-100 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-lg border border-slate-800">
-                          € {kit.price.toFixed(2)}
-                        </span>
-                      </div>
+                  Mostra Tutti i Prodotti
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {filteredKits.map((kit) => (
+                  <div
+                    key={kit.id}
+                    className="group bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between shadow-xl"
+                  >
+                    <div className="h-64 relative bg-slate-900 overflow-hidden">
+                      {kit.images && kit.images.length > 0 ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={kit.images[0]}
+                          alt={kit.title}
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-slate-700">
+                          <Trophy className="w-12 h-12" />
+                        </div>
+                      )}
                       
-                      <span className="text-xs font-black uppercase tracking-widest text-slate-300">
-                        {kit.team}
-                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/50 p-4 flex flex-col justify-between pointer-events-none">
+                        <div className="flex items-center justify-between">
+                          <span className={`text-[10px] font-black px-2.5 py-1 rounded-lg border uppercase tracking-wider ${kit.tagColor}`}>
+                            {kit.badge}
+                          </span>
+                          <span className="text-xs font-black text-slate-100 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-lg border border-slate-800">
+                            € {kit.price.toFixed(2)}
+                          </span>
+                        </div>
+                        
+                        <span className="text-xs font-black uppercase tracking-widest text-slate-300">
+                          {kit.team}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">
+                          {kit.category}
+                        </span>
+                        <h3 className="text-sm font-black text-white leading-snug group-hover:text-emerald-400 transition-colors">
+                          {kit.title}
+                        </h3>
+                      </div>
+
+                      <button
+                        onClick={() => setActiveKitForModal(kit)}
+                        className="w-full py-3 bg-slate-900 hover:bg-emerald-500 text-slate-200 hover:text-slate-950 border border-slate-800 hover:border-emerald-500 font-black rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                      >
+                        <ShoppingBag className="w-4 h-4" />
+                        <span>Seleziona & Personalizza</span>
+                      </button>
                     </div>
                   </div>
-
-                  <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">
-                        {kit.category}
-                      </span>
-                      <h3 className="text-sm font-black text-white leading-snug group-hover:text-emerald-400 transition-colors">
-                        {kit.title}
-                      </h3>
-                    </div>
-
-                    <button
-                      onClick={() => setActiveKitForModal(kit)}
-                      className="w-full py-3 bg-slate-900 hover:bg-emerald-500 text-slate-200 hover:text-slate-950 border border-slate-800 hover:border-emerald-500 font-black rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>Seleziona & Personalizza</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </section>
 
         </div>
@@ -210,6 +253,21 @@ export default function Home() {
         items={cartItems}
         onRemoveItem={handleRemoveItem}
         onClearCart={() => setCartItems([])}
+      />
+
+      {/* MENU LATERALE A TENDINA (ACCORDION) */}
+      <NavigationDrawer
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        onSelectTeam={(teamName) => {
+          setSelectedTeam(teamName);
+          setIsDrawerOpen(false);
+        }}
+        onSelectLeague={(leagueName) => {
+          setSelectedCategory(leagueName);
+          setSelectedTeam(null);
+          setIsDrawerOpen(false);
+        }}
       />
     </>
   );
