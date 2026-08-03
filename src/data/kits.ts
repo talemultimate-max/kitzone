@@ -73,6 +73,17 @@ import barcaNavyOrangeShortSetImg from './0821249c82.webp';
 import barcaGraphicShortSetImg from './33fca66ce2.webp';
 import barcaGraphicTracksuitImg from './09440548b2.webp';
 
+import bayernRetroWhiteMultiImg from './8f4cc39204.webp';
+import bayernRetroBlueRedImg from './79f4489a49.webp';
+import bayernRetroTshirtCreamImg from './8993020f31.webp';
+import bayernHome2425Img from './bfefce3f42.webp';
+import bayernHome2425AltImg from './98d9243c62.webp';
+import bayernSpecialAbstractImg from './4dab99a551.webp';
+import bayernHomeLongSleeveImg from './595ca97a5c.webp';
+import bayernHomeLongSleeveAltImg from './J53A4410JPG-121514382d.jpg';
+import bayernKidsHomeImg from './0eb56763d3.webp';
+import bayernRetroTracksuitImg from './1bbcf5cb28.webp';
+
 const getSrc = (img: any) => (typeof img === 'string' ? img : img.src);
 
 export const KITS_DATA: Kit[] = [
@@ -496,7 +507,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Crop Top Donna FC Barcelona Home',
     category: 'Donna',
-    price: 35,
+    price: 30
     originalPrice: 80,
     badge: 'IN OFFERTA',
     tagColor: 'bg-pink-900/40 text-pink-100 border-pink-600',
@@ -820,7 +831,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Viola / Nero (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 65,
+    price: 60
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-purple-900/40 text-purple-100 border-purple-600',
@@ -834,7 +845,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Nera / Viola (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 65,
+    price: 60
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-slate-900 text-purple-200 border-purple-800',
@@ -876,7 +887,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Blu / Arancione (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 65,
+    price: 60
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-blue-900/40 text-orange-200 border-blue-600',
@@ -890,7 +901,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Arancione / Blu (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 65,
+    price: 60
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-orange-900/40 text-orange-100 border-orange-600',
@@ -946,7 +957,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento Graphic FC Barcelona Blu / Sfumatura Arancio',
     category: 'Tute',
-    price: 65,
+    price: 60
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-blue-900/40 text-blue-100 border-blue-600',
@@ -955,6 +966,120 @@ export const KITS_DATA: Kit[] = [
     images: [getSrc(barcaGraphicTracksuitImg)],
     customPatches: [],
   },
+  // --- BAYERN MONACO ---
+  {
+    id: 'bayern-retro-white-multi',
+    team: 'Bayern Monaco',
+    title: 'Felpa Retro Bayern Monaco White/Multicolor',
+    category: 'Retro Vintage',
+    price: 55,
+    originalPrice: 110,
+    badge: 'Retro Icon',
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    bgGradient: 'from-emerald-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernRetroWhiteMultiImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-retro-blue-red',
+    team: 'Bayern Monaco',
+    title: 'Felpa Retro Bayern Monaco Blu/Rossa',
+    category: 'Retro Vintage',
+    price: 55,
+    originalPrice: 110,
+    badge: 'Retro Icon',
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    bgGradient: 'from-blue-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernRetroBlueRedImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-retro-tshirt-cream',
+    team: 'Bayern Monaco',
+    title: 'T-Shirt Icon Retro Bayern Monaco',
+    category: 'Retro Vintage',
+    price: 30,
+    originalPrice: 60,
+    badge: 'Top',
+    tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+    bgGradient: 'from-amber-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernRetroTshirtCreamImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-home-2425',
+    team: 'Bayern Monaco',
+    title: 'Maglia Gara Bayern Monaco Home',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Official Kit',
+    tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernHome2425Img), getSrc(bayernHome2425AltImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-special-abstract',
+    team: 'Bayern Monaco',
+    title: 'Maglia Special Edition Bayern Monaco Abstract',
+    category: 'Retro Vintage',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Limited Edition',
+    tagColor: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+    bgGradient: 'from-purple-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernSpecialAbstractImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-home-long-sleeve',
+    team: 'Bayern Monaco',
+    title: 'Maglia Gara Bayern Monaco Home Manica Lunga',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 80,
+    badge: 'Long Sleeve',
+    tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernHomeLongSleeveImg), getSrc(bayernHomeLongSleeveAltImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-kids-home',
+    team: 'Bayern Monaco',
+    title: 'Kit Bambino Bayern Monaco Home',
+    category: 'Bundesliga',
+    price: 45,
+    originalPrice: 90,
+    badge: 'Kids Kit',
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['16 (3-4 Anni)', '18 (4-5 Anni)', '20 (5-6 Anni)', '22 (7-8 Anni)', '24 (8-9 Anni)', '26 (10-11 Anni)', '28 (12-13 Anni)'],
+    images: [getSrc(bayernKidsHomeImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-retro-tracksuit',
+    team: 'Bayern Monaco',
+    title: 'Tuta Retro Bayern Monaco Cream/Orange',
+    category: 'Tute',
+    price: 60,
+    originalPrice: 120,
+    badge: 'Tracksuit',
+    tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+    bgGradient: 'from-amber-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernRetroTracksuitImg)],
+    customPatches: [],
+  },
+ 
 ];
 
 export const kits = KITS_DATA;
