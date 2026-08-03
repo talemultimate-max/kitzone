@@ -77,10 +77,8 @@ import bayernRetroWhiteMultiImg from './8f4cc39204.webp';
 import bayernRetroBlueRedImg from './79f4489a49.webp';
 import bayernRetroTshirtCreamImg from './8993020f31.webp';
 import bayernHome2425Img from './bfefce3f42.webp';
-import bayernHome2425AltImg from './98d9243c62.webp';
 import bayernSpecialAbstractImg from './4dab99a551.webp';
 import bayernHomeLongSleeveImg from './595ca97a5c.webp';
-import bayernHomeLongSleeveAltImg from './J53A4410JPG-121514382d.jpg';
 import bayernKidsHomeImg from './0eb56763d3.webp';
 import bayernRetroTracksuitImg from './1bbcf5cb28.webp';
 
@@ -966,7 +964,7 @@ export const KITS_DATA: Kit[] = [
     images: [getSrc(barcaGraphicTracksuitImg)],
     customPatches: [],
   },
-  // --- BAYERN MONACO ---
+// --- BAYERN MONACO ---
   {
     id: 'bayern-retro-white-multi',
     team: 'Bayern Monaco',
@@ -1020,7 +1018,7 @@ export const KITS_DATA: Kit[] = [
     tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     bgGradient: 'from-red-950/40 to-slate-900',
     availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
-    images: [getSrc(bayernHome2425Img), getSrc(bayernHome2425AltImg)],
+    images: [getSrc(bayernHome2425Img)],
     customPatches: [],
   },
   {
@@ -1031,7 +1029,7 @@ export const KITS_DATA: Kit[] = [
     price: 35,
     originalPrice: 75,
     badge: 'Limited Edition',
-    tagColor: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+    tagColor: 'bg-purple-500/10 text-purple-100 border-purple-600',
     bgGradient: 'from-purple-950/40 to-slate-900',
     availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
     images: [getSrc(bayernSpecialAbstractImg)],
@@ -1048,7 +1046,7 @@ export const KITS_DATA: Kit[] = [
     tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     bgGradient: 'from-red-950/40 to-slate-900',
     availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
-    images: [getSrc(bayernHomeLongSleeveImg), getSrc(bayernHomeLongSleeveAltImg)],
+    images: [getSrc(bayernHomeLongSleeveImg)],
     customPatches: [],
   },
   {
