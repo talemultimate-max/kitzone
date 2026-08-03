@@ -957,7 +957,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento Graphic FC Barcelona Blu / Sfumatura Arancio',
     category: 'Tute',
-    price: 60
+    price: 60,
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-blue-900/40 text-blue-100 border-blue-600',
