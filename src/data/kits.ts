@@ -831,7 +831,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Viola / Nero (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 60
+    price: 60,
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-purple-900/40 text-purple-100 border-purple-600',
@@ -845,7 +845,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Nera / Viola (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 60
+    price: 60,
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-slate-900 text-purple-200 border-purple-800',
@@ -887,7 +887,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Blu / Arancione (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 60
+    price: 60,
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-blue-900/40 text-orange-200 border-blue-600',
@@ -901,7 +901,7 @@ export const KITS_DATA: Kit[] = [
     team: 'FC Barcelona',
     title: 'Tuta da Allenamento FC Barcelona Arancione / Blu (Felpa Zip + Pantaloni)',
     category: 'Tute',
-    price: 60
+    price: 60,
     originalPrice: 130,
     badge: 'IN OFFERTA',
     tagColor: 'bg-orange-900/40 text-orange-100 border-orange-600',
@@ -1079,7 +1079,6 @@ export const KITS_DATA: Kit[] = [
     images: [getSrc(bayernRetroTracksuitImg)],
     customPatches: [],
   },
-
 ];
 
 export const kits = KITS_DATA;
