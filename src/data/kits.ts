@@ -93,6 +93,17 @@ import bayernOrangeWindbreakerImg from './980d63bc94.webp';
 import bayernAbstractWhiteBlueRedImg from './fcb1cdfc79.webp';
 import bayernPandaCreamImg from './b5e4f0eb55.webp';
 
+import bayernRedShortsImg from './53fde10a4b.webp';
+import bayernHomeShortSleeveImg from './2c896bc216.webp';
+import bayernGoalkeeperLongSleeveImg from './19857c0a43.webp';
+import bayernHomeLongSleeveImg from './6d581ac2ff.webp';
+import bayernGreyTracksuitJacketImg from './2983a95a4b.webp';
+import bayernBlackSpecial1Img from './15c8a379c1.webp';
+import bayernBlackSpecial2Img from './a5757115f4.webp';
+import bayernGreyPatternImg from './504d50c57c.webp';
+import bayernOliveRetroImg from './6261a6c3a1.jpg';
+import bayernLightGreyKitImg from './fc332be691.webp';
+
 const getSrc = (img: any) => (typeof img === 'string' ? img : img.src);
 
 export const KITS_DATA: Kit[] = [
@@ -1227,6 +1238,133 @@ export const KITS_DATA: Kit[] = [
     bgGradient: 'from-amber-950/40 to-slate-900',
     availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
     images: [getSrc(bayernPandaCreamImg)],
+    customPatches: [],
+  },
+  // --- BAYERN MONACO (NUOVI ARRIVI) ---
+  {
+    id: 'bayern-red-shorts',
+    team: 'Bayern Monaco',
+    title: 'Pantaloncini Gara Home Bayern Monaco',
+    category: 'Bundesliga',
+    price: 25,
+    originalPrice: 50,
+    badge: 'Official Shorts',
+    tagColor: 'bg-red-500/10 text-red-400 border-red-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernRedShortsImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-home-short-sleeve',
+    team: 'Bayern Monaco',
+    title: 'Maglia Home Bayern Monaco Manica Corta',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Home Kit',
+    tagColor: 'bg-red-500/10 text-red-400 border-red-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernHomeShortSleeveImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-goalkeeper-long-sleeve',
+    team: 'Bayern Monaco',
+    title: 'Maglia Portiere Bayern Monaco Manica Lunga',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Goalkeeper',
+    tagColor: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
+    bgGradient: 'from-slate-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernGoalkeeperLongSleeveImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-home-long-sleeve',
+    team: 'Bayern Monaco',
+    title: 'Maglia Home Bayern Monaco Manica Lunga',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Home Kit',
+    tagColor: 'bg-red-500/10 text-red-400 border-red-500/20',
+    bgGradient: 'from-red-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernHomeLongSleeveImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-grey-tracksuit-jacket',
+    team: 'Bayern Monaco',
+    title: 'Giacca Tuta Rappresentanza Bayern Monaco Grigia',
+    category: 'Tute',
+    price: 60,
+    originalPrice: 120,
+    badge: 'Tracksuit',
+    tagColor: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
+    bgGradient: 'from-slate-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernGreyTracksuitJacketImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-black-special-edition',
+    team: 'Bayern Monaco',
+    title: 'Maglia Special Edition Bayern Monaco Nera/Verde',
+    category: 'Retro Vintage',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Special Edition',
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    bgGradient: 'from-slate-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernBlackSpecial1Img), getSrc(bayernBlackSpecial2Img)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-grey-pattern-training',
+    team: 'Bayern Monaco',
+    title: 'Maglia Allenamento Bayern Monaco Grigia Pattern',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Training',
+    tagColor: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
+    bgGradient: 'from-slate-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernGreyPatternImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-olive-retro',
+    team: 'Bayern Monaco',
+    title: 'Maglia Retro Vintage Bayern Monaco Verde Oliva',
+    category: 'Retro Vintage',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Retro Icon',
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    bgGradient: 'from-emerald-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernOliveRetroImg)],
+    customPatches: [],
+  },
+  {
+    id: 'bayern-light-grey-kit',
+    team: 'Bayern Monaco',
+    title: 'Maglia Away / Third Bayern Monaco Grigio Chiaro',
+    category: 'Bundesliga',
+    price: 35,
+    originalPrice: 75,
+    badge: 'Alternate Kit',
+    tagColor: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
+    bgGradient: 'from-slate-950/40 to-slate-900',
+    availableSizes: ['S', 'M', 'L', 'XL', '2XL'],
+    images: [getSrc(bayernLightGreyKitImg)],
     customPatches: [],
   },
 ];
