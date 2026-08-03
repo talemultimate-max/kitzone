@@ -6,28 +6,33 @@ import KitModal from '@/components/KitModal';
 import CartDrawer from '@/components/CartDrawer';
 import { NavigationDrawer } from '@/components/NavigationDrawer';
 import { KITS_DATA } from '@/data/kits';
+import { getNormalizedTeamInfo } from '@/data/leagues';
 import { Kit, CartItem } from '@/types/kit';
 import { MessageCircle, ArrowRight, Zap, Sparkles, Trophy, ShoppingBag, Menu } from 'lucide-react';
 
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tutte');
-  const [selectedTeam, setSelectedTeam] = useState<string | null>(null); // Stato per il filtro squadra
+  const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
   const [activeKitForModal, setActiveKitForModal] = useState<Kit | null>(null);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false); // Stato per aprire/chiudere il menu laterale
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   const defaultMessage = encodeURIComponent('Ciao KITZONE1! Vorrei informazioni sul catalogo maglie.');
 
-  // Logica di filtraggio unificata (per categoria o per squadra scelta dal menu)
+  // Logica di filtraggio completamente automatizzata e flessibile
   const filteredKits = KITS_DATA.filter((kit) => {
-    // Se è stata selezionata una squadra specifica dal drawer
     if (selectedTeam) {
-      return kit.team.toLowerCase() === selectedTeam.toLowerCase();
+      const kitInfo = getNormalizedTeamInfo(kit.team);
+      const targetInfo = getNormalizedTeamInfo(selectedTeam);
+      return kitInfo.officialTeam.toLowerCase() === targetInfo.officialTeam.toLowerCase();
     }
-    // Altrimenti filtra per categoria standard
+
     if (selectedCategory === 'Tutte') return true;
-    return kit.category === selectedCategory;
+    
+    const kitInfo = getNormalizedTeamInfo(kit.team);
+    return kitInfo.league.toLowerCase() === selectedCategory.toLowerCase() || 
+           kit.category.toLowerCase() === selectedCategory.toLowerCase();
   });
 
   const handleAddToCart = (newItem: CartItem) => {
@@ -46,7 +51,6 @@ export default function Home() {
         onOpenCart={() => setIsCartOpen(true)}
       />
 
-      {/* BARRA EXTRA PER APRIRE IL MENU A TENDINA (O puoi metterla dentro Header.tsx) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <button
           onClick={() => setIsDrawerOpen(true)}
@@ -151,7 +155,7 @@ export default function Home() {
                     key={cat}
                     onClick={() => {
                       setSelectedCategory(cat);
-                      setSelectedTeam(null); // Resetta il filtro squadra se si clicca sulle categorie rapide
+                      setSelectedTeam(null);
                     }}
                     className={`px-4 py-2 rounded-xl uppercase tracking-wider transition-all border ${
                       selectedCategory === cat && !selectedTeam
@@ -255,7 +259,6 @@ export default function Home() {
         onClearCart={() => setCartItems([])}
       />
 
-      {/* MENU LATERALE A TENDINA (ACCORDION) */}
       <NavigationDrawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
