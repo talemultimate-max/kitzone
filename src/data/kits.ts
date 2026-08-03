@@ -1079,7 +1079,7 @@ export const KITS_DATA: Kit[] = [
     images: [getSrc(bayernRetroTracksuitImg)],
     customPatches: [],
   },
- 
+
 ];
 
 export const kits = KITS_DATA;
